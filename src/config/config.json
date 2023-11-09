@@ -1,0 +1,24 @@
+{
+  "site": {
+    "title": "yourdailyway ",
+    "base_url": "https://yourdailyway.com",
+    "base_path": "/",
+    "favicon": "/favicon.png",
+    "logo": "/YourDailyWay.png",
+    "lang": "en",
+    "description": "Explore the transformative power of daily routines. Find inspiration, tips, and insights to improve your well-being through simple habits and rituals.",
+    "pageSize": 9
+  },
+  "features": {
+    "dark_mode": true
+  },
+  "metadata": {
+    "meta_author": "Agmed Oublihi",
+    "meta_description": "Explore the transformative power of daily routines. Find inspiration, tips, and insights to improve your well-being through simple habits and rituals."
+  },
+  "author": {
+    "name": "Ahmed Oublihi",
+    "avatar": "/Ahmed.jpg",
+    "bio": "Hello, I'm Ahmed, the creator of Your Daily Way. I'm passionate about daily routines and well-being. I share practical insights to help you enhance your life through simple habits. Join me on this transformative journey to a healthier and more joyful you."
+  }
+}

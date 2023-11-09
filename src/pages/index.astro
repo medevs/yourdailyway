@@ -3,13 +3,15 @@ import { getCollection } from "astro:content";
 import HomePagination from "@components/HomePagination.astro";
 import Base from "@layouts/Base.astro";
 import Posts from "@layouts/Posts.astro";
+import Hero from "@components/Hero.astro";
 
 const posts = (await getCollection("blog")).sort(
-  (a: { data: { pubDate: number; }; }, b: { data: { pubDate: number; }; }) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
 
 <Base>
+  <Hero />
   <Posts posts={posts} />
   <HomePagination />
 </Base>

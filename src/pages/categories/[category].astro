@@ -1,9 +1,7 @@
 ---
 import Base from "@layouts/Base.astro";
 import CategoryIcon from "@components/icons/CategoryIcon.astro";
-import { getTaxonomy } from "@utils/getAllTags";
-import { getSinglePage } from "@utils/getAllTags";
-import { taxonomyFilter } from "@utils/getAllTags";
+import { getTaxonomy, getSinglePage, taxonomyFilter } from "@utils/blogFunctions";
 import { deslugify } from "@utils/slug";
 
 export async function getStaticPaths() {

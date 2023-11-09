@@ -1,6 +1,6 @@
 ---
 import Base from "@layouts/Base.astro";
-import { getTaxonomy } from "@utils/getAllTags";
+import { getTaxonomy } from "@utils/blogFunctions";
 
 const tags = await getTaxonomy("blog", "tags");
 

@@ -1,0 +1,51 @@
+---
+import { Image } from "astro:assets";
+import FormattedDate from "./FormattedDate.astro";
+import { slugify } from "@utils/slug";
+import ClockIcon from "./icons/ClockIcon.astro";
+const { post } = Astro.props;
+
+if (!post || !post.data) {
+  throw new Error("Post or post.data is undefined");
+}
+---
+
+<article class="flex w-full flex-col items-start shadow-md p-4">
+  <div class="mb-4 block overflow-hidden rounded-lg">
+    {post.data.heroImage && (
+      <figure class="h-auto w-auto object-cover md:h-[150px]">
+        <Image
+          class="cursor-progress transition duration-300 ease-in-out hover:scale-110"
+          src={post.data.heroImage}
+          alt={post.data.title}
+          width={960}
+          height={480}
+          decoding="async"
+          loading="lazy"
+        />
+      </figure>
+    )}
+  </div>
+  <div class="flex items-center gap-x-4 text-xs text-zinc-900 dark:text-white">
+    <FormattedDate date={post.data.pubDate} />
+    {post.data.categories.slice(0, 1).map((item: string) => (
+      <a
+        href={`/categories/${slugify(item)}`}
+        class="text-md relative z-10 rounded-full bg-zinc-50 px-3 py-1.5 font-medium capitalize text-zinc-600 hover:bg-zinc-50 dark:bg-zinc-900 dark:text-zinc-400"
+      >
+        {item}
+      </a>
+    ))}
+    <ClockIcon /> 2 min
+  </div>
+  <div class="relative">
+    <h2 class="mt-3 text-xl font-semibold leading-6 text-zinc-900 group-hover:text-zinc-600 dark:text-white">
+      <a href={`/blog/${post.slug}/`}>
+        <span class="absolute inset-0" />
+        {post.data.title}
+      </a>
+    </h2>
+    <p class="mt-5 line-clamp-3 text-sm leading-6 text-zinc-600">{post.data.description}</p>
+  </div>
+  <a href={`/blog/${post.slug}/`} class="mt-4 text-zinc-500 hover:underline">Continue Reading</a>
+</article>

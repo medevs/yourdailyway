@@ -1,22 +1,25 @@
 ---
-import { getCollection } from "astro:content";
-import HomePagination from "@components/HomePagination.astro";
-import Base from "@layouts/Base.astro";
-import Posts from "@layouts/Posts.astro";
-import Hero from "@components/Hero.astro";
+import { getCollection } from 'astro:content';
+import HomePagination from '@components/HomePagination.astro';
+import Base from '@layouts/Base.astro';
+import Posts from '@layouts/Posts.astro';
+import Hero from '@components/Hero.astro';
+import RoutinesList from '@components/RoutinesList.astro';
 
-const posts = (await getCollection("blog")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
+const posts = (await getCollection('blog')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
 <Base>
   <Hero />
-  <div class="mt-4 mb-12">
-    <h2 class="text-2xl md:text-3xl font-bold text-gray-800 dark:text-white mb-4">Latest Posts</h2>
+  <RoutinesList />
+  <div class="mt-4">
+    <HomePagination title="Explore More Routines", path="/routines" />
+  </div>
+  <div class="mb-12 my-4 ">
+    <h2 class="mb-4 text-2xl font-bold text-gray-800 dark:text-white md:text-3xl">Latest Posts</h2>
   </div>
   <Posts posts={posts} />
   <div class="mt-4">
-    <HomePagination />
+    <HomePagination title="All Posts", path="/blog" />
   </div>
 </Base>

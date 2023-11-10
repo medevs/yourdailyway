@@ -1,37 +1,8 @@
 ---
-import RoutineCard from '@components/RoutineCard.astro';
+import RoutinesList from '@components/RoutinesList.astro';
 import Base from '@layouts/Base.astro';
-
-const peopleData = [
-  {
-    name: 'Elon Musk',
-    age: 50,
-    uniqueRoutine: 'Innovating the Future of Space and Electric Vehicles',
-    image: './YourDailyWay.png',
-    description:
-      'Elon Musk is a business magnate, industrial designer, and engineer. He is the founder, CEO, and chief engineer/designer of SpaceX; early investor, CEO, and product architect of Tesla, Inc.; founder of The Boring Company; co-founder of Neuralink; and co-founder and initial co-chairman of OpenAI. Elon starts his day at 7 AM with a cup of coffee and some emails. He then heads to work, often skipping breakfast. His morning routine involves intense problem-solving sessions and engineering discussions. Elon\'s workday is highly demanding. He spends a significant amount of time at SpaceX and Tesla, overseeing projects, attending meetings, and providing guidance to his teams. In the evening, Elon unwinds by spending time with his family. He enjoys reading books, especially science fiction. Before bedtime, he responds to more emails and plans for the next day.',
-  },
-  {
-    name: 'Malala Yousafzai',
-    age: 24,
-    uniqueRoutine: 'Empowering Girls Through Education Advocacy',
-    image: './YourDailyWay.png',
-    description:
-      'Malala Yousafzai is a Pakistani activist for female education and the youngest-ever Nobel Prize laureate. She is known for her advocacy of education for girls in her native Swat Valley in Khyber Pakhtunkhwa, northwest Pakistan, where the local Taliban had at times banned girls from attending school. Malala starts her day with meditation and reflection. She believes in the power of education to bring positive change to the world and spends time planning and working on projects to empower girls through education. Malala is actively involved in her foundation, the Malala Fund. Her work includes advocating for policies that support girls’ education globally, working closely with world leaders, and addressing international audiences. In the evening, Malala spends time reading books and staying informed about global issues. She values family time and often engages in conversations with her family about the day’s events.',
-  }
-];
-
 ---
 
 <Base meta_title="Routines">
-  <section class="min-h-screen p-8">
-    <h1 class="mb-12 text-4xl text-center font-bold">Routines of Interesting People</h1>
-  
-    <div class="grid grid-cols-1 gap-8">
-      {peopleData.map((person) => (
-        <RoutineCard person={person} />
-      ))}
-    </div>
-  </section>
-  
+  <RoutinesList />
 </Base>

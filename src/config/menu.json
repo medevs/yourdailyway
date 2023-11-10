@@ -9,6 +9,14 @@
       "url": "/about"
     },
     {
+      "name": "Routines",
+      "url": "/routines"
+    },
+    {
+      "name": "Blog",
+      "url": "/blog"
+    },
+    {
       "name": "Tags",
       "url": "/tags"
     },

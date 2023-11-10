@@ -1,0 +1,25 @@
+---
+const { person } = Astro.props;
+---
+
+<div class="mb-12 w-full overflow-hidden rounded-md border border-gray-400 lg:flex lg:max-w-full">
+  <img
+    class="h-48 flex-none rounded-t bg-cover lg:h-auto lg:w-48 lg:rounded-t-none object-fill sm:w-full xs:w-full"
+    src={person.image}
+    alt={`Avatar of ${person.name}`}
+  />
+  <div class="flex flex-col justify-between p-4 leading-normal lg:border-l lg:border-r lg:border-t lg:border-gray-400">
+    <div class="mb-8">
+      <div class="mb-4 flex items-center">
+        <img class="mr-4 h-16 w-16 rounded-full" src={person.image} alt={`Avatar of ${person.name}`} />
+        <div class="text-sm">
+          <p class="leading-none">{person.name}</p>
+          <p class="">{person.age} years old</p>
+        </div>
+      </div>
+      <h3 class="mb-2 text-xl font-bold">{person.uniqueRoutine}</h3>
+      <p class="mb-8 text-base">{person.description}</p>
+      <a href={`/routines/${person.age}/`} class="text-zinc-500 hover:underline">Explore Routine</a>
+    </div>
+  </div>
+</div>

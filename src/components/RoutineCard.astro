@@ -4,7 +4,7 @@ const { person } = Astro.props;
 
 <div class="relative flex w-full flex-row rounded-xl shadow-md">
   <div class="relative m-0 w-2/5 shrink-0 overflow-hidden rounded-xl rounded-r-none bg-clip-border">
-    <img src={person.image} class="h-45 w-full object-cover" />
+    <img src={person.image} class="h-45 w-full rounded-full object-cover" />
   </div>
   <div class="p-6">
     <h2
@@ -30,7 +30,7 @@ const { person } = Astro.props;
         ># Learning</span
       >
     </div>
-    <a class="inline-block" href="#">
+    <a class="inline-block" href={`/routines`}>
       <button
         class="flex select-none items-center gap-2 rounded-lg px-6 py-3 text-center align-middle font-sans text-xs font-bold uppercase text-indigo-500 transition-all hover:bg-indigo-500/10 active:bg-indigo-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
         type="button"
